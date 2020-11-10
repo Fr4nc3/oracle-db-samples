@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  Constraints for Table PUBLISHERS
+--------------------------------------------------------
+SET VERIFY OFF
+connect "SYS"/"&&sysPassword" as SYSDBA
+set echo on
+ALTER TABLE "PUBLISHERS" ADD CONSTRAINT "PUBLISHERS_PK" PRIMARY KEY ("PUBLISHER_ID")
+USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+TABLESPACE "USERS"  ENABLE;
+ALTER TABLE "PUBLISHERS" MODIFY ("NAME" NOT NULL ENABLE);
+ALTER TABLE "PUBLISHERS" MODIFY ("PUBLISHER_ID" NOT NULL ENABLE);
