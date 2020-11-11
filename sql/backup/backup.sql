@@ -1,9 +1,11 @@
+SET VERIFY OFF
+connect "SYS"/"&&sysPassword" as SYSDBA
 set linesize 200
 set trimspool on
 set echo on
 spool  backup.out append
 --------------------------------------------------------
---  SHOW RUNNIN PROCESSES
+--  RUN BACKUP
 --------------------------------------------------------
 SHUTDOWN IMMEDIATE;
 STARTUP MOUNT;
